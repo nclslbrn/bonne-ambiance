@@ -1,0 +1,22 @@
+$grid-size: 1.9vw;
+$stroke-width: 0.1vw;
+
+body {
+	color: var(--text-color);
+	box-sizing: border-box;
+}
+
+body {
+	background-image: radial-gradient(
+		var(--component-bg-color) 2px,
+		transparent 2px
+	);
+	background-size: 32px 32px;
+	background-color: var(--bg-color);
+	//var(--component-bg-color));
+	@include scrollbars(0.5rem, var(--component-bg-color), var(--bg-color));
+}
+
+body.admin-bar #page {
+	position: relative;
+}

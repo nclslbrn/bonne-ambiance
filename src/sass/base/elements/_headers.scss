@@ -1,0 +1,51 @@
+.site-header {
+	position: relative;
+
+	@include breakpoint(lg) {
+		flex: 2 0 20%;
+		max-width: 20%;
+		border-bottom: none;
+	}
+}
+
+.site-header div.wrapper {
+	position: relative;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+	margin: 0 auto;
+
+	@include breakpoint(lg) {
+		position: relative;
+		display: flex;
+		flex-flow: row wrap;
+		align-items: stretch;
+		justify-content: flex-start;
+		flex-flow: column nowrap;
+
+		.site-title,
+		aside {
+			padding-left: 0.4rem;
+		}
+		/*
+		.site-title {
+			border-bottom: 1px solid var(--border-color);
+		}
+		*/
+	}
+
+	.site-title a {
+		text-decoration: none;
+		opacity: 1;
+		color: inherit;
+		letter-spacing: -0.06em;
+		font-weight: 300;
+		/* color: var(--bg-color); */
+
+		&:hover,
+		&:focus {
+			color: var(--hover-color);
+			/* background-color: var(--bg-color); */
+		}
+	}
+}

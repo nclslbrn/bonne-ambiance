@@ -1,0 +1,32 @@
+:root[data-theme="light"] {
+	--primary-color: #282c36;
+	--text-color: #08090a;
+	--focus-color: #4b4e61;
+	--hover-color: #029357;
+	--bg-color: #feffff;
+	--component-bg-color: #f7f4f4;
+	--border-color: #e6e0e0;
+}
+
+:root[data-theme="dark"] {
+	--primary-color: #e4ebf7;
+	--text-color: #e2e7ef;
+	--focus-color: #5cacfb;
+	--hover-color: #65ffba;
+	--bg-color: #21252e;
+	--component-bg-color: #272d3c;
+	--border-color: #4c566a;
+}
+
+:root {
+	--shadows: 0 0 1em 0.25em rgba(0, 0, 0, 0.1);
+}
+
+::placeholder {
+	color: var(--text-color);
+}
+
+::selection {
+	color: var(--bg-color);
+	background-color: var(--hover-color);
+}
