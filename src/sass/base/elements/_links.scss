@@ -8,7 +8,7 @@ a {
 	&:hover,
 	&:focus,
 	&:active {
-		color: var(--hover-color);
+		color: var(--secondary-color);
 	}
 
 	&:focus {
@@ -20,4 +20,3 @@ a {
 		outline: 0;
 	}
 }
-

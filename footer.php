@@ -28,7 +28,7 @@
 		<div class="site-info">
 			<p>
 				<?php echo esc_url( get_site_url() ) . ' '; ?> © <?php esc_html_e( 'All right reserved', 'Bonne-Ambiance' ); ?>
-				<a href="https://github.com/nclslbrn/Minimal-artist-portfolio">
+				<a href="https://github.com/nclslbrn/bonne-ambiance">
 					<?php esc_html_e( 'Design : N.Lebrun', 'Bonne-Ambiance' ); ?>
 				</a>
 			</p>
@@ -39,14 +39,6 @@
 </div><!-- #content -->
 </div><!-- #page -->
 <?php wp_footer(); ?>
-<?php 
-/**
- * Register js script for map with unique marker on event page */ 
-?>
-<?php global $ba_latt; ?>
-<?php global $ba_long; ?>
-<?php global $actual_events; ?>
-
 
 </body>
 </html>

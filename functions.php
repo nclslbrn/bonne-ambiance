@@ -159,25 +159,6 @@ function ba_scripts()
 }
 add_action('wp_enqueue_scripts', 'ba_scripts');
 
-
-// Mansonry grid
-function ba_enqueue_masonry_script() {
-    wp_enqueue_script( 'masonry' ); // WordPress includes Masonry
-    wp_add_inline_script( 'masonry', "
-        document.addEventListener('DOMContentLoaded', function () {
-            var grid = document.querySelector('#post-grid');
-            if (grid) {
-                new Masonry(grid, {
-                    itemSelector: '#post-grid article',
-                    columnWidth: '#post-grid article',
-                    percentPosition: true
-                });
-            }
-        });
-    " );
-}
-add_action( 'wp_enqueue_scripts', 'ba_enqueue_masonry_script' );
-
 /**
  * Implement the Custom Header feature.
  */
@@ -206,14 +187,30 @@ require get_template_directory() . '/inc/jetpack.php';
 /**
  * Load a dynamic project menu (comment to disable it)
  */
-require get_template_directory() . '/inc/map-dynamic-project-menu.php';
+require get_template_directory() . '/inc/map-dynamic-category-menu.php';
+
+/**
+ * Clean archive page title
+ */
+require get_template_directory() . '/inc/clean-archive-page-title.php';
+
+/**
+ * Modify author archive page query to include co-created post 
+ */
+require get_template_directory() . '/inc/alter-author-archive-page-query.php';
+
+/**
+ * Contact form functions 
+ */
+require get_template_directory() . '/inc/contact-form.php';
 
 /**
  * Load meta box features.
  */
 require get_template_directory() . '/lib/index.php';
 require get_template_directory() . '/inc/post-metabox.php';
-
+require get_template_directory() . '/inc/category-metabox.php';
+require get_template_directory() . '/inc/user-metabox.php';
 /**
  * Load night mode widget
  */

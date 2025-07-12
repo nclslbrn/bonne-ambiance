@@ -9,7 +9,7 @@
 		"typography": {
 			"fontFamilies": [
 				{
-					"fontFamily": "Geist,'Helvetica Neue,sans-serif",
+					"fontFamily": "creepster,'Helvetica Neue,sans-serif",
 					"slug": "Geist",
 					"name": "Geist"
 				},

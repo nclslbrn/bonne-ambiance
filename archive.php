@@ -19,10 +19,20 @@ get_header(); ?>
 				<?php
 					the_archive_title( '<h1 class="page-title">', '</h1>' );
 					the_archive_description( '<div class="taxonomy-description">', '</div>' );
-				?>
+					
+			?>
 			</header><!-- .page-header -->
+			<?php if ( is_category() || is_author() ) :
+				$category = get_queried_object();
+				$ba_html_cat_description = get_term_meta($category->term_id, 'cat_description', true);
+				?>
+				<div class="category-description">
+					<?php echo wp_kses_post(wpautop($ba_html_cat_description)); ?>
+				</div>
 
-			<?php
+				<div id="post-grid" class="entry-content">
+
+			<?php endif;
 			/* Start the Loop */
 			while ( have_posts() ) :
 				the_post();
@@ -35,7 +45,10 @@ get_header(); ?>
 				get_template_part( 'template-parts/content', get_post_format() );
 
 			endwhile;
-
+			
+			if (is_category()) : ?>
+				</div>
+			<?php endif; 
 			the_posts_navigation();
 
 		else :

@@ -1,9 +1,7 @@
-button,
+button:not(.search-submit),
 input[type="button"],
 input[type="reset"],
 input[type="submit"],
-.page-nav a,
-.page-nav span,
 .btn,
 .button,
 .social-sharing-module a {
@@ -12,7 +10,7 @@ input[type="submit"],
 	padding: 0.6em 1em 0.4em;
 }
 
-main button,
+button:not(.search-submit),
 main input[type="button"],
 main input[type="reset"],
 main input[type="submit"],
@@ -21,14 +19,16 @@ main nav.page-nav span,
 main .btn,
 main .button,
 main .social-sharing-module a,
-main .contact-links ul li a {
+main .contact-links ul li a,
+.widget fieldset label,
+.widget form.search-form {
 	margin-bottom: 1em;
 
-	&:hover {
-		@include border("bottom", --hover-color);
+	@include gradient-box(2px);
 
+	&:hover {
 		& svg {
-			fill: var(--hover-color);
+			fill: var(--primary-color);
 		}
 	}
 }
@@ -42,16 +42,15 @@ input[type="submit"],
 main nav.page-nav a,
 main nav.page-nav span {
 	border: none;
-	@include border("bottom", --border-color);
+	@include border(var(--border-color), var(--border-color), "all", 1px);
 
 	&.active,
 	&:active,
 	&:hover,
 	&:focus {
-		border-color: var(--hover-color);
-
+		@include border(var(--primary-color), var(--secondary), "all", 1px);
 		svg {
-			fill: var(--hover-color);
+			fill: var(--primary-color);
 		}
 	}
 }
@@ -73,14 +72,12 @@ a.button,
 .social-sharing-module a,
 button[data-toggle] {
 	margin: 0.25em;
-	@include border("bottom", --border-color);
 	text-decoration: none;
 }
 
 .page-nav span.page-numbers.current,
 button[data-toggle].active {
 	color: var(--primary-color);
-	@include border("bottom", --hover-color);
 }
 
 main .contact-links ul.works li a,
@@ -110,11 +107,11 @@ main .contact-links ul li a {
 	}
 
 	&:hover {
-		border-bottom: 3px solid var(--hover-color);
+		border-bottom: 3px solid var(--primary-color);
 	}
 }
 
-.social-sharing-module>ul {
+.social-sharing-module > ul {
 	display: flex;
 	flex-flow: row wrap;
 }

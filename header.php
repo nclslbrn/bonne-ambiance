@@ -23,6 +23,8 @@
 
 <body <?php body_class(); ?>>
 	
+	<?php get_template_part('template-parts/svg', 'defs'); ?>
+
 	<div id="page" class="site">
 		<a class="skip-link screen-reader-text" href="#main"><?php esc_html_e( 'Skip to content', 'Bonne-Ambiance' ); ?></a>
 
@@ -43,8 +45,7 @@
 							'theme_location'   => 'primary',
 							'menu_id'          => 'primary-menu',
 							'container'        => '',
-							'add_project_list' => true,
-							'wrap_into_year'   => false,
+							'add_category_list' => true,
 							'depth'            => 3,
 						)
 					);

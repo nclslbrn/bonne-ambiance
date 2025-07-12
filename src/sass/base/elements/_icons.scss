@@ -35,7 +35,7 @@ button.menu-toggle .menu-icon:hover::before,
 button.menu-toggle .menu-icon:focus::before,
 button.menu-toggle .menu-icon:hover::after,
 button.menu-toggle .menu-icon:focus::after {
-	background: var(--hover-color);
+	background: var(--primary-color);
 }
 
 .menu-toggle.open .menu-icon,
@@ -56,7 +56,7 @@ button.menu-toggle .menu-icon:focus::after {
 
 .menu-toggle .menu-icon::before,
 .menu-toggle .menu-icon::after {
-	content: '';
+	content: "";
 }
 
 @include breakpoint(xs) {

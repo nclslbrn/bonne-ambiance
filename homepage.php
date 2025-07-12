@@ -10,11 +10,9 @@ get_header(); ?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
-			<header class="entry-header">
-				<h1 class="entry-title"><?php echo esc_html( $post->post_title ); ?></h1>
-			</header>
 
-			<div id="post-grid" class="entry-content">
+			<div id="post-grid" class="entry-content"> 
+
 				<?php $post_query_args = array(
 					'post_type'      => 'post',
 					'post_status'    => 'publish',
@@ -54,6 +52,8 @@ get_header(); ?>
 						echo '</nav><!-- .page-nav -->';
 					}
 				} ?>
+				<!-- item sizer -->
+				<div class="post-card grid-size-normal"></div>
 			</div>
 		</main><!-- #main -->
 	</div><!-- #primary -->

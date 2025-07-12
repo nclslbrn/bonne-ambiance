@@ -10,17 +10,32 @@
 // post grid card
 if (! is_single()) : ?>
 	<?php $grid_size = get_post_meta(get_the_ID(), 'grid_size', true); ?>
-	<?php $post_grid_class = 'grid_size_' . ( $grid_size ? $grid_size : 'normal'); ?>
-	<article id="post-<?php the_ID(); ?>" <?php post_class($post_grid_class); ?>>
-		<a href="<?php echo esc_url( get_permalink() ); ?>">
-			<?php the_post_thumbnail(); ?>
-		</a>
-		
-		<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
+	<?php $post_grid_class = 'grid-size-' . ( $grid_size ? $grid_size : 'normal'); ?>
+	<div class="post-card <?php echo esc_attr($post_grid_class); ?>">
+		<article id="post-<?php the_ID(); ?>">
+			<a href="<?php echo esc_url( get_permalink() ); ?>">
+				<?php the_post_thumbnail(); ?>
+			</a>
+			
+			<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
 
-		<?php the_excerpt(); ?>
+			<div class="post-meta">
+				<div class="posted-on"> 
+					<?php ba_posted_on(); ?>
+				</div>
+				<div class="posted-in">
+					<?php ba_posted_in(); ?>
+				</div>
+			</div>
 
-	</article>
+
+			<?php ba_the_excerpt(); ?>
+
+			<div class="posted-by">
+				<p><?php ba_posted_by(); ?></p>
+			</div>
+		</article>
+	</div>
 <?php else : ?> 
 	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
