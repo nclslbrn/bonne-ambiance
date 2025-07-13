@@ -116,7 +116,7 @@ add_action('after_setup_theme', 'ba_setup');
  */
 function ba_content_width()
 {
-	$GLOBALS['content_width'] = apply_filters('ba_content_width', 640);
+	$GLOBALS['content_width'] = apply_filters('ba_content_width', 1400);
 }
 add_action('after_setup_theme', 'ba_content_width', 0);
 
@@ -129,8 +129,8 @@ function ba_widgets_init()
 {
 	register_sidebar(
 		array(
-			'name'          => esc_html__('Sidebar', 'Bonne-Ambiance'),
-			'id'            => 'sidebar-1',
+			'name'          => esc_html__('Header', 'Bonne-Ambiance'),
+			'id'            => 'sidebar-header',
 			'description'   => esc_html__('Add widgets here.', 'Bonne-Ambiance'),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</section>',
@@ -138,6 +138,19 @@ function ba_widgets_init()
 			'after_title'   => '</h2>',
 		)
 	);
+
+	register_sidebar(
+		array(
+			'name'          => esc_html__('Footer', 'Bonne-Ambiance'),
+			'id'            => 'sidebar-footer',
+			'description'   => esc_html__('Add widgets here.', 'Bonne-Ambiance'),
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		)
+	);
+
 }
 add_action('widgets_init', 'ba_widgets_init');
 
@@ -147,8 +160,16 @@ add_action('widgets_init', 'ba_widgets_init');
 function ba_scripts()
 {
 	wp_enqueue_style('Bonne-Ambiance-style', get_template_directory_uri() . '/style.css', '', '2.0.2', 'all');
-	//wp_enqueue_style('Bonne-Ambiance-font', get_template_directory_uri() . '/build/fonts/stylesheet.css', '', '2.0.0', 'all');
-	wp_enqueue_script('Bonne-Ambiance-script', get_template_directory_uri() . '/build/js/front.js', array(), '2.0.2', true);
+	wp_enqueue_script('jquery');
+	wp_enqueue_script('Masonry', '//cdnjs.cloudflare.com/ajax/libs/masonry/4.2.2/masonry.pkgd.min.js', array(), '4.2.2', true);
+	wp_enqueue_script('ImageLoaded', '//unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js', array(), '5', true);
+
+	wp_enqueue_script(
+		'Bonne-Ambiance-script', get_template_directory_uri() . '/build/js/front.js',
+		array('jquery', 'Masonry', 'ImageLoaded'), 
+		'2.0.2', 
+		true
+	);
 	wp_enqueue_style('vidstack-theme', 'https://cdn.vidstack.io/player/theme.css', '', '', 'all');
 	wp_enqueue_style('vidstack-video', 'https://cdn.vidstack.io/player/video.css', '', '', 'all');
 	wp_enqueue_script_module('vidstack-script', 'https://cdn.vidstack.io/player@1.11.21', array(), '1.11.21', true);

@@ -1,5 +1,19 @@
+header#masthead.site-header .site-branding aside.widget-area {
+	display: none;
+	@include breakpoint(md) {
+		display: flex;
+	}
+}
+
+div#content.site-content .wrapper aside.widget-area {
+	display: flex;
+	@include breakpoint(md) {
+		display: none;
+	}
+}
+
 .widget {
-	margin: 1em 0;
+	margin: 0;
 
 	// Make sure select elements fit in widgets.
 	select {

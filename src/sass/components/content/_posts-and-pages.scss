@@ -1,7 +1,7 @@
 .site .wrapper {
 	display: block;
+	position: relative;
 	min-height: 100%;
-	padding: 0 2em;
 
 	@include breakpoint(xs) {
 		width: 95%;
@@ -12,11 +12,15 @@
 	}
 
 	@include breakpoint(md) {
-		width: 90%;
+		width: 960px;
 	}
 
 	@include breakpoint(lg) {
-		width: 100%;
+		width: 1200px;
+	}
+
+	@include breakpoint(xl) {
+		width: 1280px;
 	}
 
 	@include center-block;
@@ -41,55 +45,63 @@
 
 /* Article list
 --------------------------------------------- */
-.site-main {
-}
-
-#post-grid {
+#grid {
 	position: relative;
-	max-width: 100%;
-	columns: 5;
-	column-gap: 20px;
-	//column-rule: 1px solid var(--border-color);
+	width: 100%;
 }
 
 /* clearfix */
-#post-grid:after {
+#grid::after {
 	content: "";
 	display: block;
 	clear: both;
+	float: none;
 }
 
-#post-grid .post-card {
+#grid .cell,
+#grid .cell.grid-size-large,
+#grid .grid-sizer {
 	display: block;
-	margin: 0 0 -1px -1px;
+	margin: 0;
 	padding: 1em;
 	margin-bottom: 2em;
+
+	width: 100%;
+	@include breakpoint(sm) {
+		width: 50%;
+	}
+	@include breakpoint(md) {
+		width: 25%;
+	}
 }
 
-.post-card > article {
-	break-inside: avoid-column;
+#grid .cell.grid-size-large {
+	width: 100%;
+	@include breakpoint(sm) {
+		width: 50%;
+	}
 }
 
-.post-card > article > a:first-child {
+.cell > article > a:first-child {
 	display: block;
 	break-before: column;
 }
 
-.post-card article h2.entry-title {
+.cell article h2.entry-title {
 	font-size: 1.46484375rem;
 	margin: 0;
 	border-bottom: 1px solid var(--border-color);
 }
 
-.post-card article h2 a {
+.cell article h2 a {
 	display: block;
 	padding-bottom: 0.5em;
 	text-decoration: none;
 
 	background: -webkit-linear-gradient(
 		-45deg,
-		var(--primary-color),
-		var(--secondary-color)
+		var(--text-color),
+		var(--text-color)
 	);
 	background-clip: text;
 	color: var(--primary-color);
@@ -98,8 +110,8 @@
 	transition: all 0.35ms ease-in-out;
 }
 
-.post-card article h2 a:hover,
-.post-card article h2 a:focus {
+.cell article h2 a:hover,
+.cell article h2 a:focus {
 	color: var(--secondary-color);
 	background: -webkit-linear-gradient(
 		-45deg,
@@ -111,31 +123,27 @@
 	-webkit-text-fill-color: transparent;
 }
 
-.post-card article .post-meta {
+.cell article .post-meta {
 	display: flex;
 	flex-flow: row wrap;
 	justify-content: space-between;
 }
 
-.post-card article .post-meta a {
+.cell article .post-meta a {
 	font-size: 0.66em;
 }
 
-.post-card article .post-meta a,
-.post-card article .posted-by p a {
+.cell article .post-meta a,
+.cell article .posted-by p a {
 	text-transform: uppercase;
 	text-decoration: none;
 }
 
-.post-card article .posted-by {
+.cell article .posted-by {
 	display: block;
 }
 
-.post-card article .posted-by p {
-	text-align: center;
-}
-
-.post-card > article p {
+.cell > article p {
 	break-inside: avoid-column;
 }
 

@@ -21,28 +21,29 @@ get_header(); ?>
 					</header><!-- .entry-header -->
                     
 					<div class="entry-content">
-                        <?php 
-                            the_content(); 
+                        <?php the_content(); ?> 
                             
-                            $authors = get_users([
+                        <?php $authors = get_users([
                                 'fields'  => ['ID', 'display_name'],
                                 'orderby' => 'display_name',
-                            ]);
-                            
-                            foreach ($authors as $user) :
+                        ]); ?>
+                        
+                        <div id="grid">
+                            <div class="grid-sizer"></div>
+
+                            <?php foreach ($authors as $user) :
 
                                 $user_description = get_user_meta($user->ID, 'description', true);
-                                $user_avatar = get_post_meta($user->ID, 'avatar', true);
-                                $user_link = get_post_meta($user->ID, 'link', true);
+                                $user_avatar = get_user_meta($user->ID, 'avatar', true);
+                                $user_link = get_user_meta($user->ID, 'link', true);
                                 $user_url = parse_url($user_link);
                                 
                                 ?>
+                                <div class="cell">
                                     <h5>
                                         <a href="<?php echo esc_url( get_author_posts_url( $user->ID ) ); ?>">
                                             <?php echo esc_textarea($user->display_name); ?>
                                         </a>
-
-                                        <?php echo $user->ID; ?>
                                     </h5>
                                     
                                     <?php if ($user_avatar) : ?>
@@ -54,19 +55,17 @@ get_header(); ?>
                                     <?php endif; ?>
                                     
                                     <?php if ($user_description) : ?>
-                                        <p><?php wp_kses_post($user_description); ?></p>
+                                        <p><?php echo wp_kses_post($user_description); ?></p>
                                     <?php endif; ?>
                                     
                                     <?php if ($user_link && $user_url) : ?>
                                         <a href="<?php esc_url($user_link); ?>">
-                                            <?php echo esc_html($user_url['hostname']); ?>
+                                            <?php echo esc_html($user_url['host']); ?>
                                         </a>
                                     <?php endif; ?>
-                                <?php 
-                            endforeach;
-                                
-                        ?>
-
+                                </div><!-- .cell -->
+                            <?php endforeach; ?>
+                        </div><!-- #grid -->
 					</div>
 				</article>
 			<?php endwhile; // End of the loop. ?>

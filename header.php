@@ -36,6 +36,7 @@
 							<?php echo esc_textarea( get_bloginfo( 'name' ) ); ?>
 						</a>
 					</h1>
+					<?php get_sidebar('header'); ?>
 				</div><!-- .site-branding -->
 				<nav id="site-navigation" class="main-navigation" role="navigation">
 					<?php 

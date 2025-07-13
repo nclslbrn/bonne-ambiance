@@ -20,10 +20,22 @@ main .btn,
 main .button,
 main .social-sharing-module a,
 main .contact-links ul li a,
+.widget fieldset label {
+	margin-bottom: 1em;
+}
+
+button:not(.search-submit),
+main input[type="button"],
+main input[type="reset"],
+main input[type="submit"],
+main nav.page-nav a,
+main nav.page-nav span,
+main .btn,
+main .button,
+main .social-sharing-module a,
+main .contact-links ul li a,
 .widget fieldset label,
 .widget form.search-form {
-	margin-bottom: 1em;
-
 	@include gradient-box(2px);
 
 	&:hover {
@@ -116,6 +128,6 @@ main .contact-links ul li a {
 	flex-flow: row wrap;
 }
 
-span.input button {
+div.input button {
 	float: right;
 }

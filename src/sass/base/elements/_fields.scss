@@ -15,13 +15,11 @@ input[type="datetime-local"],
 input[type="color"],
 select,
 textarea {
-	& {
-		color: var(--text-color);
-		border: none;
-		padding: 3px;
-		font-size: 1em;
-		@include gradient-box(1px);
-	}
+	position: relative;
+	color: var(--text-color);
+	border: none;
+	padding: 3px;
+	font-size: 1em;
 }
 
 input[type="search"] {
@@ -52,9 +50,6 @@ fieldset {
 input,
 textarea {
 	outline: none;
-	&:focus {
-		border-color: var(--primary-color);
-	}
 }
 
 input,
@@ -160,22 +155,39 @@ input.pot {
 }
 
 /* real field */
-span.input,
-span.input button[type="submit"] {
-	display: block;
-	margin: 2em 0;
-}
 
-span.input input,
-span.input.textarea-input textarea {
+div.input {
 	padding: 1em;
-	background: var(--component-bg-color);
-	@include gradient-box(1px);
+	margin: 2em 0;
+	@include gradient-box(2px);
 }
 
-span.input input[name="message_name"],
-span.input input[name="message_email"],
-span.input textarea[name="message_text"] {
+div.input.anti-spambot-input p {
+	display: flex;
+	width: 100%;
+	align-content: baseline;
+}
+
+div.input.anti-spambot-input p span {
+	padding: 1em 0;
+}
+
+div.input input,
+div.input.textarea-input textarea {
+	display: block;
+	position: relative;
+	padding: 1em;
+	background: none;
+}
+
+form.contact button[type="submit"] {
+	padding: 1em;
+	float: right;
+}
+
+div.input input[name="message_name"],
+div.input input[name="message_email"],
+div.input textarea[name="message_text"] {
 	width: 100%;
 }
 
@@ -198,7 +210,7 @@ span.input textarea[name="message_text"] {
 	background-color: tomato;
 }
 
-span.input button[type="submit"] {
+div.input button[type="submit"] {
 	padding: 0.6em 0.8em;
 }
 

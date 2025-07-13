@@ -7,11 +7,11 @@
  * @package Bonne-Ambiance
  */
 
-if ( ! is_active_sidebar( 'sidebar-footer' ) ) {
+if ( ! is_active_sidebar( 'sidebar-header' ) ) {
 	return;
 }
 ?>
 
 <aside id="secondary" class="widget-area" role="complementary">
-	<?php dynamic_sidebar( 'sidebar-footer' ); ?>
+	<?php dynamic_sidebar( 'sidebar-header' ); ?>
 </aside><!-- #secondary -->

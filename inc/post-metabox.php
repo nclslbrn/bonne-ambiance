@@ -1,5 +1,4 @@
 <?php 
-
 /**
  * Functions to get and save custom metadata
  * Post has a postmeta to change the size of the post in the homepage post grid

@@ -30,8 +30,8 @@ get_header(); ?>
 					<?php echo wp_kses_post(wpautop($ba_html_cat_description)); ?>
 				</div>
 
-				<div id="post-grid" class="entry-content">
-
+				<div id="grid" class="entry-content">
+					<div class="grid-sizer"></div>
 			<?php endif;
 			/* Start the Loop */
 			while ( have_posts() ) :

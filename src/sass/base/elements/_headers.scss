@@ -4,7 +4,11 @@ header#masthead.site-header .wrapper {
 }
 
 header#masthead.site-header .site-branding {
-	padding: 0.75em 0 1.5em 0;
+	display: flex;
+	padding: 0.75em 1em 1.5em 1em;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+	align-items: center;
 	@include border(var(--primary-color), var(--secondary-color), "bottom", 6px);
 }
 
@@ -23,12 +27,8 @@ header#masthead.site-header .site-title a {
 
 @include breakpoint(md) {
 	aside.widget-area {
-		position: absolute;
 		display: flex;
 		flex-flow: row nowrap;
 		justify-content: flex-end;
-		top: 0.5em;
-		right: 2em;
-		width: 50%;
 	}
 }
