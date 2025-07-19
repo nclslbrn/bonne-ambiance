@@ -13,14 +13,15 @@ if (! is_single()) : ?>
 	<?php $post_grid_class = 'grid-size-' . ( $grid_size ? $grid_size : 'normal'); ?>
 	<div class="cell <?php echo esc_attr($post_grid_class); ?>">
 		<article id="post-<?php the_ID(); ?>">
-			<a href="<?php echo esc_url( get_permalink() ); ?>">
+			<a class="halftone" href="<?php echo esc_url( get_permalink() ); ?>">
 				<?php the_post_thumbnail(); ?>
+				<div class="halftone-ink"></div>
 			</a>
-			
+
 			<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
 
 			<div class="post-meta">
-				<?php /*<div class="posted-on"> 
+				<?php /*<div class="posted-on">
 					<?php ba_posted_on(); ?>
 				</div> */ ?>
 				<div class="posted-by">
@@ -32,13 +33,13 @@ if (! is_single()) : ?>
 					<?php ba_posted_in(); ?>
 				</div>
 			</div>
-			
-		
+
+
 			<?php ba_the_excerpt(); ?>
 
 		</article>
 	</div>
-<?php else : ?> 
+<?php else : ?>
 	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 		<header class="entry-header">
@@ -51,21 +52,21 @@ if (! is_single()) : ?>
 					<?php ba_posted_on(); ?>
 				</div><!-- .entry-meta -->
 			<?php endif; ?>
-		
+
 			<?php
 				the_content(
 					sprintf(
 					/* translators: %s: Name of current post. */
 						wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'Bonne-Ambiance' ), array( 'span' => array( 'class' => array() ) ) ),
 						the_title( '<span class="screen-reader-text">"', '"</span>', false )
-					) 
+					)
 				);
 
 				wp_link_pages(
 					array(
 						'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'Bonne-Ambiance' ),
 						'after'  => '</div>',
-					) 
+					)
 				);
 				?>
 		</div><!-- .entry-content -->

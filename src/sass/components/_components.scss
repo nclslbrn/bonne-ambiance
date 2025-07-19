@@ -1,10 +1,10 @@
 /* Navigation
 --------------------------------------------- */
-@import 'navigation/navigation';
+@import "navigation/navigation";
 
 /* Posts and pages
 --------------------------------------------- */
-@import 'content/posts-and-pages';
+@import "content/posts-and-pages";
 
 /* Comments
 --------------------------------------------- */
@@ -12,20 +12,24 @@
 
 /* Widgets
 --------------------------------------------- */
-@import 'widgets/widgets';
+@import "widgets/widgets";
 
 /* Media
 --------------------------------------------- */
-@import 'media/media';
+@import "media/media";
+
+/* Halftone effect
+--------------------------------------------- */
+@import "media/halftone";
 
 /* Captions
 --------------------------------------------- */
-@import 'media/captions';
+@import "media/captions";
 
 /* LightBox
 --------------------------------------------- */
-@import 'media/lightbox';
+@import "media/lightbox";
 
 /* Galleries
 --------------------------------------------- */
-@import 'media/galleries';
+@import "media/galleries";

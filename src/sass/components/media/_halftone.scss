@@ -1,0 +1,32 @@
+$dot-size: 4px; // 1
+
+.cell article a.halftone {
+	position: relative;
+	display: block;
+	filter: brightness(2) blur(1px) contrast(1.2);
+	overflow: hidden;
+}
+
+.cell article a.halftone .halftone-ink {
+	position: absolute;
+	top: -50%; // have to scale the halftone layer up since we're rotating it
+	left: -50%;
+	bottom: -50%;
+	right: -50%;
+	background: radial-gradient($dot-size at 75% 25%, black, white),
+		radial-gradient($dot-size at 25% 75%, cyan, white),
+		radial-gradient($dot-size at 75% 75%, magenta, white),
+		radial-gradient($dot-size at 25% 25%, yellow, white);
+	background-size: $dot-size $dot-size;
+	transform: rotate(20deg);
+	background-blend-mode: multiply;
+	mix-blend-mode: hard-light;
+}
+
+.cell article a.halftone img {
+	display: block;
+}
+
+.cell article a.halftone:hover {
+	filter: brightness(1.5) blur(1px) contrast(2);
+}

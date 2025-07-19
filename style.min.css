@@ -228,7 +228,6 @@ header#masthead.site-header button.menu-toggle{display:block;position:absolute;p
 #grid::after{content:"";display:block;clear:both;float:none}
 #grid .cell,#grid .cell.grid-size-large,#grid .grid-sizer{display:block;margin:0;padding:1em;margin-bottom:2em;width:100%}
 #grid .cell.grid-size-large{width:100%}
-.cell>article>a:first-child{display:block;break-before:column}
 .cell article h2.entry-title{font-size:1.46484375rem;margin:0;border-bottom:1px solid var(--border-color)}
 .cell article h2 a{display:block;padding-bottom:.5em;text-decoration:none;background:-webkit-linear-gradient(-45deg,var(--text-color),var(--text-color));background-clip:text;color:var(--primary-color);-webkit-background-clip:text;-webkit-text-fill-color:rgba(0,0,0,0);transition:all .35ms ease-in-out}
 .cell article h2 a:hover,.cell article h2 a:focus{color:var(--secondary-color);background:-webkit-linear-gradient(-45deg,var(--secondary-color),var(--primary-color));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:rgba(0,0,0,0)}
@@ -255,6 +254,10 @@ article.project .entry-content [data-media-player]{max-width:1920px}
 a.event-featured-image img,a.project-featured-image img,a.fluidbox img,.wp-block-image a img,.gallery a img{float:left;object-fit:cover;min-height:100%;opacity:1;transition:all 150ms ease-out}
 a.event-featured-image:hover,a.project-featured-image:hover,a.fluidbox:hover,.wp-block-image a:hover,.gallery a:hover{background-color:var(--primary-color)}
 a.event-featured-image:hover img,a.project-featured-image:hover img,a.fluidbox:hover img,.wp-block-image a:hover img,.gallery a:hover img{opacity:.8;box-shadow:var(--shadows)}
+.cell article a.halftone{position:relative;display:block;filter:brightness(2) blur(1px) contrast(1.2);overflow:hidden}
+.cell article a.halftone .halftone-ink{position:absolute;top:-50%;left:-50%;bottom:-50%;right:-50%;background:radial-gradient(4px at 75% 25%,black,white),radial-gradient(4px at 25% 75%,cyan,white),radial-gradient(4px at 75% 75%,magenta,white),radial-gradient(4px at 25% 25%,yellow,white);background-size:4px 4px;transform:rotate(20deg);background-blend-mode:multiply;mix-blend-mode:hard-light}
+.cell article a.halftone img{display:block}
+.cell article a.halftone:hover{filter:brightness(1.5) blur(1px) contrast(2)}
 .wp-caption{margin-bottom:1.5em;max-width:100%}
 .wp-caption img[class*=wp-image-]{display:block;margin-left:auto;margin-right:auto}
 .wp-caption .wp-caption-text{margin:.8075em 0}
