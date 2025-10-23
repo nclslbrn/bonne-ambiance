@@ -18,7 +18,7 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 
 Normalizing styles have been helped along thanks to the fine work of
 Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
-*/@font-face{font-family:Komika;font-style:normal;font-weight:100 900;font-display:swap;src:url("./build/fonts/KOMIKAX_-webfont.woff") format("woff")}
+*/@font-face{font-family:Creepster;font-style:normal;font-weight:100 900;font-display:swap;src:url("./build/fonts/creepster.woff2") format("woff2")}
 :root[data-theme=light]{--primary-color:#04b565;--secondary-color:#0615bb;--text-color:#111;--bg-color:#feffff;--component-bg-color:#f7f4f4;--border-color:#ccc}
 :root[data-theme=dark]{--primary-color:#740abf;--secondary-color:#fd7200;--text-color:#eee;--bg-color:#21252e;--component-bg-color:#272d3c;--border-color:#97979731}
 :root{--shadows:0 0 1em .25em rgba(0,0,0,0.1)}
@@ -63,7 +63,7 @@ html{box-sizing:border-box}
 html{font-size:17px;font-size:calc(17px + 2*(100vw - 320px)/680);line-height:1.5;font-weight:300}
 body,button,input,select,optgroup,textarea{color:var(--text-color);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Inter","Noto Sans",tohama,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";font-size:1rem;line-height:1.6;font-weight:500}
 article .entry-content .entry-meta,article footer.entry-footer{margin-top:3rem}
-h1,h2,h3,h4,h5,h6{font-family:Komika,sans-serif;clear:both;color:var(--text-color);hyphens:auto;font-weight:900;opacity:.75}
+h1,h2,h3,h4,h5,h6{font-family:Creepster,sans-serif;clear:both;color:var(--text-color);hyphens:auto;font-weight:900;opacity:.75}
 h6{font-size:.9375rem}
 h5{font-size:1.171875rem}
 h4{font-size:1.46484375rem}
@@ -229,6 +229,13 @@ header#masthead.site-header button.menu-toggle{display:block;position:absolute;p
 #grid .cell,#grid .cell.grid-size-large,#grid .grid-sizer{display:block;margin:0;padding:1em;margin-bottom:2em;width:100%}
 #grid .cell.grid-size-large{width:100%}
 .cell article h2.entry-title{font-size:1.46484375rem;margin:0;border-bottom:1px solid var(--border-color)}
+.cell:nth-child(n+0) article h2 a{font-family:Charter,"Bitstream Charter","Sitka Text",Cambria,serif}
+.cell:nth-child(n+1) article h2 a{font-family:"Iowan Old Style","Palatino Linotype","URW Palladio L",P052,serif}
+.cell:nth-child(n+2) article h2 a{font-family:Avenir,Montserrat,Corbel,"URW Gothic",source-sans-pro,sans-serif}
+.cell:nth-child(n+3) article h2 a{font-family:"Nimbus Mono PS","Courier New",monospace}
+.cell:nth-child(n+4) article h2 a{font-family:ui-monospace,"Cascadia Code","Source Code Pro",Menlo,Consolas,"DejaVu Sans Mono",monospace}
+.cell:nth-child(n+5) article h2 a{font-family:Rockwell,"Rockwell Nova","Roboto Slab","DejaVu Serif","Sitka Small",serif}
+.cell:nth-child(n+6) article h2 a{font-family:"Segoe Print","Bradley Hand",Chilanka,TSCu_Comic,casual,cursive}
 .cell article h2 a{display:block;padding-bottom:.5em;text-decoration:none;background:-webkit-linear-gradient(-45deg,var(--text-color),var(--text-color));background-clip:text;color:var(--primary-color);-webkit-background-clip:text;-webkit-text-fill-color:rgba(0,0,0,0);transition:all .35ms ease-in-out}
 .cell article h2 a:hover,.cell article h2 a:focus{color:var(--secondary-color);background:-webkit-linear-gradient(-45deg,var(--secondary-color),var(--primary-color));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:rgba(0,0,0,0)}
 .cell article .post-meta{display:flex;flex-flow:row wrap;justify-content:space-between}
